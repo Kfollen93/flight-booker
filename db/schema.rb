@@ -17,13 +17,15 @@ ActiveRecord::Schema.define(version: 2020_09_29_214809) do
 
   create_table "airports", force: :cascade do |t|
     t.string "airport_code"
+    t.string "departing_flights"
+    t.string "arriving_flights"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "flights", force: :cascade do |t|
-    t.string "start_airport"
-    t.string "finish_airport"
+    t.string "from_airport"
+    t.string "to_airport"
     t.datetime "flight_date"
     t.string "duration"
     t.datetime "created_at", null: false
