@@ -9,30 +9,30 @@
 Airport.destroy_all
 Flight.destroy_all
 
-@airports = Airport.create([{ airport_code: 'SFO' },
-                { airport_code: 'JFK'},
-                { airport_code: 'SEA'},
-                { airport_code: 'PDX'},
-                { airport_code: 'DEN'},
-                { airport_code: 'ATL'}])
+airports = Airport.create([{ airport_code: 'SFO' },
+                          { airport_code: 'JFK'},
+                          { airport_code: 'SEA'},
+                          { airport_code: 'PDX'},
+                          { airport_code: 'DEN'},
+                          { airport_code: 'ATL'}])
 
-Flight.create!([{ from_airport_id: @airports.slice(0).id,
-                 to_airport_id: @airports.slice(1).id,
-                flight_date: 2021-02-02,
-                duration: '5 hours and 47 minutes'
-                },
+flights = Flight.create([{ from_airport_id: airports.slice(0).id,
+                          to_airport_id: airports.slice(1).id,
+                          flight_date: 2021-02-02,
+                          duration: '5 hours and 47 minutes'
+                          },
 
-                { from_airport_id: @airports.slice(2).id,
-                  to_airport_id: @airports.slice(3).id,
-                 flight_date: 2021-05-11,
-                 duration: '2 hours and 20 minutes'
-                },
+                          { from_airport_id: airports.slice(2).id,
+                            to_airport_id: airports.slice(3).id,
+                          flight_date: 2021-05-11,
+                          duration: '2 hours and 20 minutes'
+                          },
 
-                { from_airport_id: @airports.slice(4).id,
-                  to_airport_id: @airports.slice(5).id,
-                 flight_date: 2021-01-06,
-                 duration: '4 hours and 6 minutes'
-                }
-                ])
+                          { from_airport_id: airports.slice(4).id,
+                            to_airport_id: airports.slice(5).id,
+                          flight_date: 2021-01-06,
+                          duration: '4 hours and 6 minutes'
+                          }
+                          ])
 
 p "Created #{Airport.count} airport entries and #{Flight.count} flight entries."
