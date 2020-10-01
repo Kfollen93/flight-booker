@@ -1,1 +1,21 @@
-<h1>Flights</h1>
+ <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Flights
+      </h1>
+      <p class="searchform">
+    <%= simple_form_for @flights do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.input :from_airport, as: :select %>
+        <%= f.input :to_airport, as: :select %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit %>
+      </div>
+    <% end %>
+      </p>
+    </div>
+  </section>
