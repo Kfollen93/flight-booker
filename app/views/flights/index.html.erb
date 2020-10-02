@@ -4,11 +4,13 @@
         Flights
       </h1>
       <p class="searchform">
-    <%= simple_form_for @flights do |f| %>
+    <%= simple_form_for @airports do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
-        <%= f.input :airport_code, collection: ['SFO', 'NYC', 'SEA'] %>
+        <%= f.input :airport_code %>
+        <%= f.association :departing_flights %>
+        <%= f.association :arriving_flights %>
         
       </div>
 
@@ -19,3 +21,4 @@
       </p>
     </div>
   </section>
+
