@@ -1,9 +1,5 @@
-  <h1 class="title">
-    Flights
-  </h1>
+<h1 class="title">
+  Flights
+</h1>
 
-    <%= simple_form_for @airports do |f| %>
-      <%= f.error_notification %>
-      <%= f.input :airport_code, collection: ["SFO", "NYC", "SEA"] %>
-      <%= f.button :submit %>
-    <% end %>
+<%= render "form" %>
