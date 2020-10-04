@@ -1,7 +1,6 @@
 <%= simple_form_for @airports do |f| %>
   <%= f.error_notification %>
-  <%= f.input :airport_code, collection: ["SFO", "NYC", "SEA"], label: 'From Airport' %>
-  <%= f.input :airport_code, collection: ["SFO", "NYC", "SEA"], label: 'To Airport' %>
-  <%= f.input :airport_code, collection: ["1", "2", "3", "4"], label: 'Passengers' %>
+  <%= f.input :airport_code, label: 'From Airport' %>
+  <%= f.input :airport_code, label: 'To Airport' %>
   <%= f.button :submit %>
 <% end %>
