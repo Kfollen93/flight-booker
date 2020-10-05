@@ -3,13 +3,7 @@
 # Holds actions regarding viewing airports and flights
 class FlightsController < ApplicationController
   def index
-    @airports = Airport.all.build(airport_params)
+    @airports = Airport.all
     @flights = Flight.all
-  end
-
-  private
-
-  def airport_params
-    params.require(:airport).permit(:airport_code)
   end
 end
