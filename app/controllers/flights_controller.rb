@@ -3,7 +3,7 @@
 # Holds actions regarding viewing airports and flights
 class FlightsController < ApplicationController
   def index
-    @airports = Airport.all.map { |a| [ a.airport_code ]}
+    @airports = Airport.all.first
     @flights = Flight.all
   end
 end
