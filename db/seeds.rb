@@ -18,19 +18,19 @@ airports = Airport.create([{ airport_code: 'SFO' },
 
 flights = Flight.create([{ from_airport_id: airports.slice(0).id,
                           to_airport_id: airports.slice(1).id,
-                          flight_date: 2021-02-02,
+                          flight_date: "02/02/2021",
                           duration: '5 hours and 47 minutes'
                           },
 
                           { from_airport_id: airports.slice(2).id,
                             to_airport_id: airports.slice(3).id,
-                          flight_date: 2021-05-11,
+                          flight_date: "05/11/2021",
                           duration: '2 hours and 20 minutes'
                           },
 
                           { from_airport_id: airports.slice(4).id,
                             to_airport_id: airports.slice(5).id,
-                          flight_date: 2021-01-06,
+                          flight_date: "01/06/2022",
                           duration: '4 hours and 6 minutes'
                           }
                           ])
