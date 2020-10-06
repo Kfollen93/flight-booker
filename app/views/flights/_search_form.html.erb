@@ -1,4 +1,4 @@
-<%= simple_form_for(flights_path, method: :get, url: flights_path) do |f| %>
+<%= simple_form_for(:flight_search, method: :get, url: flights_path) do |f| %>
   <%= f.error_notification %>
   <%= f.input :from_airport_code, collection: Airport.all.map { |a| a.airport_code }, label: 'From Airport', include_blank: false %>
   <%= f.input :to_airport_code, collection: Airport.all.map { |a| a.airport_code }, label: 'To Airport', include_blank: false %>
