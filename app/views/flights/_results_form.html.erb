@@ -2,10 +2,8 @@
   Results
 </h1>
 
-<% if @available_flights %>
-  <% simple_form_for :available_flights do |f| %>
-  <%= f.label :flight_date, as: :radio_buttons %>
-<% end %>
-  <% else %>
-    <%= "No Flights Available" %>
+<% unless @available_flights.nil? %>
+  <% @available_flights.each do |flight| %>
+    <%= flight.from_airport_id %>
+  <% end %>
 <% end %>
