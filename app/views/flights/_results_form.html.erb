@@ -1,3 +1,11 @@
 <h1 class="title">
   Results
 </h1>
+
+<% if @available_flights %>
+  <% simple_form_for :available_flights do |f| %>
+  <%= f.label :flight_date, as: :radio_buttons %>
+<% end %>
+  <% else %>
+    <%= "No Flights Available" %>
+<% end %>
