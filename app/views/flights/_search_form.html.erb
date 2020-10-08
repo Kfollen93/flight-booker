@@ -2,7 +2,7 @@
   <%= f.error_notification %>
   <%= f.input :from_airport_id, collection: Airport.all.map { |a| [a.airport_code, a.id]}, label: 'From Airport', include_blank: false %>
   <%= f.input :to_airport_id, collection: Airport.all.map { |a| [a.airport_code, a.id]}, label: 'To Airport', include_blank: false %>
-  <%= f.input :passengers, collection: [1, 2, 3, 4], label: 'Passengers', include_blank: false %>
+  <%= f.input :passengers, collection: 1..4, label: 'Passengers', include_blank: false %>
   <%= f.input :date_of_flight, collection: Flight.all.map { |x| x.flight_date }, label: 'Flight Date', include_blank: false %>
   <%= f.button :submit, 'Search' %>
 <% end %>
