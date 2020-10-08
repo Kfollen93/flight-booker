@@ -2,8 +2,10 @@
   Results
 </h1>
 
-<% unless @available_flights.nil? %>
+<% if @available_flights.present? %>
   <% @available_flights.each do |flight| %>
     <%= flight.from_airport_id %>
   <% end %>
+  <% else %>
+    <%= 'No Available Flights' %>
 <% end %>
