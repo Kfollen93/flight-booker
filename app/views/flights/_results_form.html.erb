@@ -19,13 +19,26 @@
 </h1>
 
 <%= simple_form_for(:booking, method: :get, url: new_booking_path) do |f| %>
-  <% @available_flights.each do |flight| %>  
-    <%= f.label flight.from_airport_id %>
-    <%= f.text_field flight.from_airport_id %>
-    <% f.hidden_field :number_of_passengers, value: params[:flight_search][:passengers] %>
-    <%= f.button :submit, 'Continue to Booking' %>
+  <% @available_flights.each do |flight| %>
+    <div class="form-group row">
+      <div class="col-md-2">
+        <%= f.input flight.from_airport_id, as: :boolean %>
+      </div>
+        <div class="col-md-2">
+          <div class="arrow">
+            <p>&rarr;</p>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <%= f.label flight.to_airport_id, required: false  %>
+        </div>
+    </div>
+  <% f.hidden_field :number_of_passengers, value: params[:flight_search][:passengers] %>
+  <%= f.button :submit, 'Continue to Booking' %>
   <% end %>
 <% end %>
   <% else %>
-    <%= 'No Available Flights' %>
+    <h1 class="title">
+      No Flights Available <span> &#9785; </span>
+    </h1>
 <% end %>
