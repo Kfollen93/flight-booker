@@ -22,7 +22,7 @@
   <% @available_flights.each do |flight| %>
     <div class="form-group row">
       <div class="col-md-2">
-        <%= f.input flight.from_airport_id, as: :boolean %>
+        <%= f.input flight.from_airport_id, as: :boolean, required: true %>
       </div>
         <div class="col-md-2">
           <div class="arrow">
@@ -30,7 +30,7 @@
           </div>
         </div>
         <div class="col-md-2">
-          <%= f.label flight.to_airport_id, required: false  %>
+          <%= f.label flight.to_airport_id, required: true %>
         </div>
     </div>
   <% f.hidden_field :number_of_passengers, value: params[:flight_search][:passengers] %>
