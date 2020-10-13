@@ -1,0 +1,6 @@
+<%= simple_form_for(@selected_booking) do |bookings_form| %>
+  Name: <%= bookings_form.text_field :name %>
+  Email: <%= bookings_form.text_field :email %>
+
+  <%= bookings_form.submit %>
+<% end %>
