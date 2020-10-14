@@ -1,4 +1,28 @@
-<%= simple_form_for(@selected_booking) do |bookings_form| %>
+<%= simple_form_for(:confirm_booking) do |f| %>
+  <%= @selected_booking %>
+
+<% end %>
+
+
+<br>
+
+<%= form_with model: @passenger do |f| %>
+  Passenger(s) Info:
+  <ul>
+    <%= f.fields_for :information do |info_form| %>
+      <li>
+        <%= info_form.label :name %>
+        <%= info_form.text_field :name %>
+ 
+        <%= info_form.label :email %>
+        <%= info_form.text_field :email %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= simple_form_for @passenger do |bookings_form| %>
   Name: <%= bookings_form.text_field :name %>
   Email: <%= bookings_form.text_field :email %>
 
