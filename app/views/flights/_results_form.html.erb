@@ -8,7 +8,7 @@
   <% @available_flights.each do |flight| %>
     <div class="form-group row">
       <div class="col-md-2">
-        <%= f.input flight.from_airport.airport_code, as: :boolean, required: true %>
+        <%= f.input :flight_id, label: "#{flight.from_airport.airport_code.upcase}", as: :radio_buttons, collection: [flight.id], required: true %>
       </div>
         <div class="col-md-2">
           <div class="arrow">
@@ -16,10 +16,10 @@
           </div>
         </div>
         <div class="col-md-2">
-          <%= f.label flight.to_airport.airport_code, required: true %>
+          <%= flight.to_airport.airport_code %>
         </div>
     </div>
-  <% f.hidden_field :number_of_passengers, value: params[:flight_search][:passengers] %>
+  <%= f.hidden_field :passengers, value: params[:flight_search][:passengers] %>
   <%= f.button :submit, 'Continue to Booking' %>
   <% end %>
 <% end %>
