@@ -4,7 +4,8 @@
 class BookingsController < ApplicationController
   def new
     @passenger = Passenger.new
-
-     @selected_booking = Booking.where(from_airport: params[:booking][:flight_id])
+    @booking = Booking.new
+    @flight = Flight.find(params[:booking][:flight_id])
+    
   end
 end
