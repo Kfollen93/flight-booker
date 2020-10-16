@@ -1,10 +1,23 @@
-<%= simple_form_for(:confirm_booking) do |f| %>
-  <%= @selected_booking%>
-<% end %>
-
-
-<br>
-
+<div class="container"> 
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Flight ID</th>
+        <th>Flight Date</th>
+        <th>Departure Airport</th>
+        <th>Arrival Airport</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> <%= @selected_booking.flight_id %> </td>
+        <td> <%= @selected_booking.flight.flight_date %> </td>
+        <td> <%= @selected_booking.flight.from_airport.airport_code %> </td>
+        <td> <%= @selected_booking.flight.to_airport.airport_code %> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 
 <%= simple_form_for @passenger do |passenger_form| %>
@@ -13,3 +26,5 @@
 
   <%= passenger_form.submit %>
 <% end %>
+
+
