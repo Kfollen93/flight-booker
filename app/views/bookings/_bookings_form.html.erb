@@ -20,11 +20,15 @@
 </div>
 
 
-<%= simple_form_for @passenger do |passenger_form| %>
-  Name: <%= passenger_form.text_field :name %>
-  Email: <%= passenger_form.text_field :email %>
-
-  <%= passenger_form.submit %>
-<% end %>
-
-
+ <%= form_for @passenger do |f| %>
+    ...
+    <% 3.times do %>
+      <%= f.fields_for @passenger.shipping_address.build do |pass_form| %>
+        ...
+        Name: <%= pass_form.text_field :name %>
+        Email: <%= pass_form.text_field :email %>
+        ...
+      <% end %>
+    <% end %>
+    <%= f.submit %>
+  <% end %>
