@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
     @passenger = Passenger.new
     @booking = Booking.new
     @flight = Flight.find(params[:booking][:flight_id])
+    @selected_booking = @flight.bookings.build
     
   end
 end
