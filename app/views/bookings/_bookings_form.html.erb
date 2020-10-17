@@ -21,14 +21,15 @@
 
 
  <%= form_for @passenger do |f| %>
-    ...
-    <% 3.times do %>
-      <%= f.fields_for @passenger.shipping_address.build do |pass_form| %>
-        ...
+
+    <% params[:booking][:passengers].to_i.times do |pass_form| %> <br>
+      <%= f.fields_for @passenger do |pass_form| %> <br>
+
         Name: <%= pass_form.text_field :name %>
-        Email: <%= pass_form.text_field :email %>
-        ...
+        Email: <%= pass_form.text_field :email %> <br>
+
       <% end %>
-    <% end %>
+    <% end %> <br>
     <%= f.submit %>
   <% end %>
+
