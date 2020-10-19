@@ -19,17 +19,15 @@
   </table>
 </div>
 
+ <%= simple_form_for(@booking, url: booking_path(@booking, @flight)) do |f| %>
 
- <%= form_for @passenger do |f| %>
+    <% params[:booking][:passengers].to_i.times do |x| %> <br>
+      <%= f.fields_for :passengers do |p| %> <br>
 
-    <% params[:booking][:passengers].to_i.times do |pass_form| %> <br>
-      <%= f.fields_for @passenger do |pass_form| %> <br>
-
-        Name: <%= pass_form.text_field :name %>
-        Email: <%= pass_form.text_field :email %> <br>
+        Name: <%= p.text_field :name %>
+        Email: <%= p.text_field :email %> <br>
 
       <% end %>
     <% end %> <br>
-    <%= f.submit %>
-  <% end %>
-
+  <%= f.submit %>
+<% end %>
