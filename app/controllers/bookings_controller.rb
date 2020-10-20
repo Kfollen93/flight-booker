@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     
-    if @booking.save
+    if @booking.save!
       flash[:notice] = "Booking was successfully created."
       redirect_to @booking
     else
@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @booking = Booking.find(params[:booking][:flight_id])
+    @booking = Booking.find(params[:id])
   end
 
   private
