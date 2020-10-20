@@ -20,14 +20,10 @@
 </div>
 
  <%= simple_form_for(@booking, method: :get, url: booking_path([@booking, @flight])) do |f| %>
-
-    
       <%= f.fields_for :passengers do |p| %>
-
         Name: <%= p.text_field :name %>
         Email: <%= p.text_field :email %> <br>
-
-    
     <% end %> <br>
-  <%= f.submit %>
+    <%= f.hidden_field :flight_id, value: params[:booking][:flight_id] %>
+  <%= f.submit "Submit Booking" %>
 <% end %>
