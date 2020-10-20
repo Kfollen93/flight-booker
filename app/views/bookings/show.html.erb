@@ -1,1 +1,36 @@
-<p>Show.html.erb page, hi !</p>
+<div class="title">
+  <h1>Thank You for Booking with Odin Airlines</h1>
+</div>
+
+<br>
+
+<div class="container"> 
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Flight ID</th>
+        <th>Flight Date</th>
+        <th>Departure Airport</th>
+        <th>Arrival Airport</th>
+        <th>Flight Duration</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> <%= @booking.flight_id %> </td>
+        <td> <%= @booking.flight.flight_date %> </td>
+        <td> <%= @booking.flight.from_airport.airport_code %> </td>
+        <td> <%= @booking.flight.to_airport.airport_code %> </td>
+        <td> <%= @booking.flight.duration %> </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="title">
+    <h2>Passengers</h2>
+  <% @booking.passengers.each do |passenger|%> <br>
+    <%= passenger.name.titleize %>
+  <% end %>
+  </div>
+</div>
+
