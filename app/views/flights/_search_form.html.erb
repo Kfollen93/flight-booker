@@ -1,6 +1,6 @@
 <%= simple_form_for(:flight_search, method: :get, url: flights_path) do |f| %>
   <%= f.error_notification %>
-  <%= f.input :from_airport_code, collection: @airport_labels, label: 'From Airport', include_blank: false %>
+  <%= f.input :from_airport_code, :autocomplete => :off, collection: @airport_labels, label: 'From Airport', include_blank: false %>
   <%= f.input :to_airport_code, collection: @airport_labels, label: 'To Airport', include_blank: false %>
   <%= f.input :passengers, collection: 1..4, label: 'Passengers', include_blank: false %>
   <%= f.input :date_of_flight, collection: Flight.all.map { |x| x.flight_date }, label: 'Flight Date', include_blank: false %>

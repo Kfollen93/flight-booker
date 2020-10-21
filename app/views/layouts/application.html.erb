@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+  
     <title>FlightBooker</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,11 +11,20 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+  <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+  <div class="container"></div>
+    <div class="navbar-header">
+      <div class="navbar-brand">
+        <%= link_to "Search Flights", root_path %>
+      </div>
+    </div>
+  </div>
+</nav>
     <!-- Wrap everything in bootstrap container -->
     <div class="container">
       <%= yield %>
     </div>
+    
   </body>
 </html>
