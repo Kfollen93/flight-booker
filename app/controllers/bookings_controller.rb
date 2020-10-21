@@ -13,11 +13,12 @@ class BookingsController < ApplicationController
   
   def create
     @booking = Booking.new(booking_params)
-    
-    if @booking.save!
-      flash[:notice] = "Booking was successfully created."
+    @flight = Flight.find(params[:booking][:flight_id])
+    @selected_booking = @flight.bookings.build
+
+    if @booking.save
       redirect_to @booking
-    else
+    else 
       render :new
     end
   end
