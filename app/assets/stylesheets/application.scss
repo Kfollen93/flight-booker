@@ -15,6 +15,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+// Hide Simple Form's required "*" asteriks
+abbr[title="required"] {
+    display: none;
+  }
 
  .title{
      text-align: center;
