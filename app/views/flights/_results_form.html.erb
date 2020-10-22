@@ -1,4 +1,4 @@
-<% if @available_flights.present? %>
+<% if !@available_flights.nil? && @available_flights.length > 0 %>
 
 <h1 class="subtitle">
   Results
@@ -24,10 +24,12 @@
   <%= f.button :submit, 'Continue to Booking' %>
   <% end %>
 <% end %>
-  <% else %>
+  <% elsif !@available_flights.nil? && @available_flights.length == 0 %>
     <h1 class="subtitle">
-      No Flights Available <span> &#9785; </span>
+      No Flights Available
     </h1>
+    <% else%>
+      <!-- Empty -->
 <% end %>
 
 
