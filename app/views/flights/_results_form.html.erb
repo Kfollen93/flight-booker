@@ -8,7 +8,8 @@
   <% @available_flights.each do |flight| %>
     <div class="form-group row">
       <div class="col-md-2">
-        <%= f.input :flight_id, label: "#{flight.from_airport.airport_code.upcase}", as: :radio_buttons, collection: [flight.id], required: true %>
+        <%= f.input :flight_id, label: "#{flight.from_airport.airport_code.upcase}",
+         as: :radio_buttons, collection: [flight.id] %>
       </div>
         <div class="col-md-2">
           <div class="arrow">
