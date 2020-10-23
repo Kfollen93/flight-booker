@@ -4,6 +4,8 @@
 class FlightsController < ApplicationController
   def index
     @airport_labels = Airport.all.map { |a| [a.airport_code, a.id]}
+    @dates = Flight.all.map { |d| d.flight_date }.uniq
+    @passengers = 1..4
 
     if params[:flight_search] 
      @available_flights = Flight
