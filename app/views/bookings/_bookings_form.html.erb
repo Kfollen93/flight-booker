@@ -19,11 +19,13 @@
   </table>
 </div>
 
- <%= simple_form_for(@booking) do |f| %>
-      <%= f.fields_for :passengers do |p| %>
-        <%= p.input :name, error: 'Passenger name is mandatory and must be less than 60 characters.' %>
-        <%= p.input :email, error: 'Passenger email is mandatory and must be in "email@domain.com" format.' %> <br>
-    <% end %> <br>
-    <%= f.hidden_field :flight_id, value: params[:booking][:flight_id] %>
-  <%= f.submit "Submit Booking" %>
-<% end %>
+<div class="col-md-8">
+  <%= simple_form_for(@booking) do |f| %>
+    <%= f.fields_for :passengers do |p| %>
+      <%= p.input :name, error: 'Passenger name is mandatory and must be less than 60 characters.' %>
+      <%= p.input :email, error: 'Passenger email is mandatory and must be in "email@domain.com" format.' %> <br>
+        <% end %> <br>
+      <%= f.hidden_field :flight_id, value: params[:booking][:flight_id] %>
+    <%= f.submit "Submit Booking" %>
+  <% end %>
+</div>
