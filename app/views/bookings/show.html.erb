@@ -1,6 +1,7 @@
-<div class="title">
-  <h1>Thank You for Booking with Odin Airlines</h1>
-</div>
+<h1 class="title">
+  Thank You for Booking with Odin Airlines
+</h1>
+
 
 <br>
 
@@ -27,7 +28,9 @@
   </table>
 
   <div class="subtitle">
-    <h2>Passengers</h2>
+    <h2 class="subtitle">
+      Passengers
+    </h2>
   <% @booking.passengers.each do |passenger|%> <br>
     <%= passenger.name.titleize %>
   <% end %>
