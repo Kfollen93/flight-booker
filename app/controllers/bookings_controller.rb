@@ -3,12 +3,17 @@
 # Holds actions regarding bookings
 class BookingsController < ApplicationController
   def new
-    @flight = Flight.find(params[:booking][:flight_id])
-    
-    @selected_booking = @flight.bookings.build
-    @booking = Booking.new
-    num_of_passengers = params[:booking][:passengers]
-    num_of_passengers.to_i.times { @booking.passengers.build }
+    if params[:booking][:flight_id] == ""
+      flash[:alert] = "* You must select a flight before continuing."
+      redirect_to root_path
+      
+    else
+      @flight = Flight.find(params[:booking][:flight_id])
+      @selected_booking = @flight.bookings.build
+      @booking = Booking.new
+      num_of_passengers = params[:booking][:passengers]
+      num_of_passengers.to_i.times { @booking.passengers.build }
+    end
   end
   
   def create
