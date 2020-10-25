@@ -23,8 +23,11 @@
 </nav>
     <!-- Wrap everything in bootstrap container -->
     <div class="container">
+
       <%= yield %>
     </div>
-    
+        <% flash.each do |key, value| %>
+    <div class="flash <%= key %>"><%= value %></div>
+<% end %>
   </body>
 </html>
