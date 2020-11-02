@@ -1,0 +1,13 @@
+
+Thank you for booking with Odin Airlines, <%= @passenger.name.titleize %>.
+===============================================
+ 
+Below are your booking details:
+
+Flight ID: <%= @passenger.booking.flight_id %> <br>
+Flight Date: <%= @passenger.booking.flight.flight_date %> <br>
+Departure Airport: <%= @passenger.booking.flight.from_airport.airport_code %> <br>
+Arrival Airport: <%= @passenger.booking.flight.to_airport.airport_code %> <br>
+Flight Duration: <%= @passenger.booking.flight.duration %>
+<br>
+We hope you enjoy your flight and have a great day!

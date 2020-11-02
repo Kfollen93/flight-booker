@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1>Thank you for booking with Odin Airlines, <%= @passenger.name.titleize %>.</h1>
+<h2>
+  Below are your booking details:
+<br>
+</h2>
+  Flight ID: <%= @passenger.booking.flight_id %> <br>
+  Flight Date: <%= @passenger.booking.flight.flight_date %> <br>
+  Departure Airport: <%= @passenger.booking.flight.from_airport.airport_code %> <br>
+  Arrival Airport: <%= @passenger.booking.flight.to_airport.airport_code %> <br>
+  Flight Duration: <%= @passenger.booking.flight.duration %>
+<br>
+<h3>We hope you enjoy your flight and have a great day!</h3>
+</body>
+</html>
