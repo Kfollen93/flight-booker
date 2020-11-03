@@ -22,8 +22,10 @@ class BookingsController < ApplicationController
     @selected_booking = @flight.bookings.build
 
     if @booking.save
-      @booking.passengers.each do |passenger|
-        PassengerMailer.with(passenger: passenger).thanks_email.deliver_now!
+      if Rails.env.development?
+        @booking.passengers.each do |passenger|
+          PassengerMailer.with(passenger: passenger).thanks_email.deliver_now!
+        end
       end
       redirect_to @booking
     else 
