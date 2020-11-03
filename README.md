@@ -9,6 +9,9 @@ The purpose of building this website was to get exposure to working with advance
 
 I then briefly styled the application for presentation purposes, and deployed to Heroku. The biggest learning part of this project for me was reinforcing my understanding of associations which can be tricky, working with seeded data, and getting my forms to submit properly and paying a lot of attention to what is going on in the parameters within the server log.
 
+### Update
+I tested adding some mailers to this application. I was surprised by overall how easy it was to do, it was very similar to building a new controller and views. An email is sent to each passenger upon completing a booking, but in development mode only. I tried getting this set up in production mode on Heroku, but I ran into an odd error while using SendGrid, which resulted in my account being automatically "banned" upon creating it and trying to add it as a Heroku Addon. I searched the web for a bit and found this to actually be a common issue/bug with SendGrid and Heroku. For now, I've decided to move on, but I feel confident in knowing how to add email distributions if needed.
+
 ### Gem List
 
 - <a href="https://rubygems.org/gems/bootstrap-sass">bootstrap-sass</a>
