@@ -8,7 +8,7 @@
   <% @available_flights.each do |flight| %>
     <div class="form-group row">
       <div class="col-md-2">
-        <%= f.input :flight_id, label: "#{flight.from_airport.airport_code.upcase} ---->" " #{flight.to_airport.airport_code}",
+        <%= f.input :flight_id, label: "#{flight.from_airport.airport_code.upcase} ----" " #{flight.to_airport.airport_code}",
          as: :radio_buttons, collection: [flight.id] %>
   <% end %>
     <%= f.hidden_field :passengers, value: params[:flight_search][:passengers] %> 
